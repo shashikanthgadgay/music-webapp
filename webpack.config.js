@@ -7,7 +7,11 @@ const testPath = path.join(__dirname, './test');
 module.exports = {
   devtool: 'eval',
   entry: [
-    './src/index.js'
+    './src/index.js',
+    './src/styles/spinner.css',
+    './src/styles/metadataLayout.css',
+    './src/styles/loginForm.css',
+    './src/styles/layout.css',
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -51,7 +55,11 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style!css-loader'
-      }
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader?name=/images/[name].[ext]',
+      },
     ],
   },
   resolve: {
