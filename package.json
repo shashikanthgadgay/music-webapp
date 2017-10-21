@@ -8,7 +8,7 @@
     "test:watch": "karma start --autoWatch=true --singleRun=false",
     "posttest": "eslint --ext .js --ext .jsx ./src ./test",
     "eslintFix": "eslint --ext .js --ext .jsx ./src ./test --fix",
-    "start": "webpack-dev-server --hot --progress --colors",
+    "start": "npm run build && node server.js",
     "dev": "webpack-dev-server --hot --inline",
     "copy": "copyfiles -f ./index.html ./dist",
     "build": "npm run copy && webpack -p --config webpack.config.js"
@@ -20,6 +20,7 @@
   "author": "shashikanth",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.14.0",
     "history": "^2.1.2",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
