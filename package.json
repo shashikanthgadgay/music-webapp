@@ -10,8 +10,8 @@
     "eslintFix": "eslint --ext .js --ext .jsx ./src ./test --fix",
     "start": "npm run build && node server.js",
     "dev": "webpack-dev-server --hot --inline",
-    "copy": "copyfiles -f ./index.html ./dist",
-    "build": "npm run copy && webpack -p --config webpack.config.js"
+    "copy": "./node_modules/copyfiles/copyfiles -f ./index.html ./dist",
+    "build": "npm run copy && ./node_modules/webpack/bin/webpack.js -p --config webpack.config.js"
   },
   "repository": {
     "type": "git",
